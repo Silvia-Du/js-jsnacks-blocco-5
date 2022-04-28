@@ -39,3 +39,14 @@ const bikeContainer = [
     weightKg: '11',
   }
 ]
+
+
+for(let i in bikeContainer){
+  const bike = (bikeContainer[i]);
+  console.log(bike);
+
+const {name, weight} = bike;
+console.log(name);
+
+
+}
