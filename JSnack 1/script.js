@@ -3,7 +3,7 @@ Crea un array di 10 oggetti che rappresentano una zucchina, indicando per ognuna
 Calcola quanto pesano tutte le zucchine.
 */
 
-const varietàZucchine = [
+const varietyZucchine = [
   {
     name: 'zucchina nera',
     pesoGr: 70,
@@ -31,4 +31,16 @@ const varietàZucchine = [
   }
 ]
 
-for(let i in varietàZucchine)
+// for(let i in varietyZucchine){
+//   console.log(varietyZucchine[i], 'oggetto zucchina----')
+//   console.log(varietyZucchine[i].pesoGr, 'peso zucchina----');
+// }
+
+for(let zucchina of varietyZucchine){
+  // console.log(varietyZucchine, 'array');
+  console.log(zucchina, 'zucchina');
+  console.log(zucchina.pesoGr, 'peso');
+  const peso = zucchina.pesoGr;
+  console.log(peso, 'peso----');
+  
+}
