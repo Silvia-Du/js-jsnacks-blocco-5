@@ -57,17 +57,32 @@ const varietyZucchine = [
   },
 ]
 
-const littleZucchini =[];
+const smallZucchini =[];
 const largeZucchini =[];
+
+const pesaZucchine = (zucchiniContainer) => {
+  let ZucchiniWeight = 0;
+
+  for(let zucchina of zucchiniContainer){
+    ZucchiniWeight += zucchina.pesoGr;
+  }
+  console.log(ZucchiniWeight);
+  return ZucchiniWeight;
+}
+
+
 
 for(let zucchina of varietyZucchine){
 
-  console.log(zucchina.lunghezzaCm, 'zucchina lenght');
   const lenghtZucchina = zucchina.lunghezzaCm;
-  const verifyLenght = ( lenghtZucchina <= 15)? littleZucchini.push(zucchina): largeZucchini.push(zucchina);
-
+  const verifyLenght = ( lenghtZucchina <= 15)? smallZucchini.push(zucchina): largeZucchini.push(zucchina);
 
 }
 
-console.log(littleZucchini, 'piccole container');
-console.log(largeZucchini, 'grandi container');
+const smallZucchiniWeight = pesaZucchine (smallZucchini);
+const bigZucchiniWeight = pesaZucchine (largeZucchini);
+
+
+document.getElementById('output-1').innerHTML = `Il peso delle zucchine piccole è : ${smallZucchiniWeight} grammi ;`
+
+document.getElementById('output-2').innerHTML = `Il peso delle zucchine grandi è : ${bigZucchiniWeight} grammi ;`
