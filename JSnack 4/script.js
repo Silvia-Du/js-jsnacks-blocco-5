@@ -40,13 +40,45 @@ const bikeContainer = [
   }
 ]
 
+const bikePrinter = (object) => `La bici più pesante è ${name}, e il suo peso è ${weightKg} kg;`
+
+// const bikeFinder = (container) => {
+//   let pesoPiuAlto = 0;
+
+//   for(let i in bikeContainer){
+
+//     const bike = (bikeContainer[i]);
+//     const { name, weightKg } = bike;
+
+//     if(weightKg > pesoPiuAlto){
+//       pesoPiuAlto = weightKg;
+//       heavierBike = bike;
+//     }
+//   }
+//   return heavierBike;
+
+// }
+
+//const heavierBike = bikeFinder(bikeContainer);
+
+
+
+let pesoPiuAlto = 0;
+let heavierBike;
 
 for(let i in bikeContainer){
+
   const bike = (bikeContainer[i]);
-  console.log(bike);
+  const { name, weightKg } = bike;
 
-const {name, weight} = bike;
-console.log(name);
-
-
+  if(weightKg > pesoPiuAlto){
+    pesoPiuAlto = weightKg;
+    heavierBike = bike;
+  }
 }
+
+const {name, weightKg} = heavierBike;
+document.getElementById('output').innerHTML = bikePrinter(heavierBike);
+
+
+  
