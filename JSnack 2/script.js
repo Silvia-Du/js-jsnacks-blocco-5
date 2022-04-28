@@ -1,14 +1,73 @@
-/*Jsnack 1
-Crea un array di 10 oggetti che rappresentano una zucchina, indicando per ognuna varietà, peso e lunghezza.
-Calcola quanto pesano tutte le zucchine.
+/*
 Jsnack 2
 Crea 10 oggetti che rappresentano una zucchina.
 Dividi in due array separati le zucchine che misurano meno o più di 15cm. Infine stampa separatamente quanto pesano i due gruppi di zucchine.
---- BONUS
-Jsnack 3
-Scrivi una funzione che accetti una stringa come argomento e la ritorni girata (es. Ciao -> oaiC)
-Jsnack 4
-Crea un array di oggetti, in cui ogni oggetto descrive una bici da corsa con le seguenti proprietà: nome e peso.
-Stampa a schermo la bici con peso minore utilizzando destructuring e template literal
-NB: Se siete indietro con i lavori passati NON lavorate sui bonus ma usate il tempo per sistemarli :faccia_leggermente_sorridente:
-buon lavoro!*/
+*/
+
+const varietyZucchine = [
+  {
+    name: 'zucchina nera',
+    pesoGr: 70,
+    lunghezzaCm: 18,
+  },
+  {
+    name: 'zucchino romanesco',
+    pesoGr: 80,
+    lunghezzaCm: 15,
+  }, 
+  {
+    name: 'zucchino fiorentino',
+    pesoGr: 95,
+    lunghezzaCm: 17,
+  }, 
+  {
+    name: 'zucchina tonda',
+    pesoGr: 70,
+    lunghezzaCm: 15,
+  },
+  {
+    name: 'zucchina trombetta',
+    pesoGr: 75,
+    lunghezzaCm: 18,
+  },
+  {
+    name: 'zucchina napoletana',
+    pesoGr: 95,
+    lunghezzaCm: 21,
+  },
+  {
+    name: 'zucchina fantasia',
+    pesoGr: 65,
+    lunghezzaCm: 12,
+  }, 
+  {
+    name: 'zucchino zucchinello',
+    pesoGr: 90,
+    lunghezzaCm: 23,
+  }, 
+  {
+    name: 'zucchina tondeggiante',
+    pesoGr: 70,
+    lunghezzaCm: 21,
+  },
+  {
+    name: 'zucchina montanara',
+    pesoGr: 60,
+    lunghezzaCm: 14,
+  },
+]
+
+const littleZucchini =[];
+const largeZucchini =[];
+
+for(let zucchina of varietyZucchine){
+
+  console.log(zucchina.lunghezzaCm, 'zucchina lenght');
+  const lenghtZucchina = zucchina.lunghezzaCm;
+  const verifyLenght = ( lenghtZucchina <= 15)? littleZucchini.push(zucchina): largeZucchini.push(zucchina);
+
+
+}
+
+console.log(littleZucchini, 'piccole container');
+console.log(largeZucchini, 'grandi container');
