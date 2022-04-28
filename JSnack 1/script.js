@@ -31,16 +31,13 @@ const varietyZucchine = [
   }
 ]
 
-// for(let i in varietyZucchine){
-//   console.log(varietyZucchine[i], 'oggetto zucchina----')
-//   console.log(varietyZucchine[i].pesoGr, 'peso zucchina----');
-// }
 
+let pesoTot = 0;
 for(let zucchina of varietyZucchine){
-  // console.log(varietyZucchine, 'array');
-  console.log(zucchina, 'zucchina');
-  console.log(zucchina.pesoGr, 'peso');
-  const peso = zucchina.pesoGr;
-  console.log(peso, 'peso----');
-  
+
+  const pesoZucchina = zucchina.pesoGr;
+  pesoTot += pesoZucchina;
 }
+
+document.getElementById('output').innerHTML = `Il peso totale delle zucchine è : ${pesoTot} grammi;`;
+
