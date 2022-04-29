@@ -40,49 +40,30 @@ const bikeContainer = [
   }
 ]
 
-const bikePrinter = (object) => `La bici più pesante è ${name}, e il suo peso è ${weightKg} kg;`
+const bikePrinter = (object) => `La bici più leggera è ${name}, e il suo peso è ${weightKg} kg;`
 
 
-let pesoPiuAlto = 0;
-let heavierBike;
+let lighterWeight;
+let lighterBike;
 
 for(let i in bikeContainer){
 
   const bike = (bikeContainer[i]);
-  const { name, weightKg } = bike;
+  const {weightKg } = bike;
 
-  if(weightKg > pesoPiuAlto){
-    pesoPiuAlto = weightKg;
-    heavierBike = bike;
+  if (lighterWeight == undefined || lighterWeight > weightKg ){
+    lighterWeight = weightKg;
+    lighterBike = bike;
   }
 }
 
-const {name, weightKg} = heavierBike;
-document.getElementById('output').innerHTML = bikePrinter(heavierBike);
+const {name, weightKg} = lighterBike;
+document.getElementById('output').innerHTML = bikePrinter(lighterBike);
 
 
 
-// qui una soluzione dove racchiudo la logica in una funzione...non saprei quale cosa è meglio se con o senza.
+// qui una soluzione dove racchiudo la logica in una funzione, x bici piu pesante...non saprei dire quale cosa è meglio se con o senza funzione;
 
-
-// const bikeFinder = (container) => {
-//   let pesoPiuAlto = 0;
-
-//   for(let i in bikeContainer){
-
-//     const bike = (bikeContainer[i]);
-//     const { name, weightKg } = bike;
-
-//     if(weightKg > pesoPiuAlto){
-//       pesoPiuAlto = weightKg;
-//       heavierBike = bike;
-//     }
-//   }
-//   return heavierBike;
-
-// }
-
-//const heavierBike = bikeFinder(bikeContainer);
 
 
 

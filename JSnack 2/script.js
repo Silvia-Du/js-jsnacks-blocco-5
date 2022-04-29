@@ -57,27 +57,39 @@ const varietyZucchine = [
   },
 ]
 
-const smallZucchini =[];
-const largeZucchini =[];
+let smallZucchini =[], largeZucchini =[];
 
 const pesaZucchine = (zucchiniContainer) => {
   let ZucchiniWeight = 0;
 
-  for(let zucchina of zucchiniContainer){
+  // for(let zucchina of zucchiniContainer){
+  //   ZucchiniWeight += zucchina.pesoGr;
+  // }
+
+  zucchiniContainer.forEach( zucchina => {
     ZucchiniWeight += zucchina.pesoGr;
-  }
+  });
+
   console.log(ZucchiniWeight);
   return ZucchiniWeight;
 }
 
+smallZucchini = varietyZucchine.filter((zucchina) => {
+  return zucchina.lunghezzaCm <= 15;
+})
+
+largeZucchini = varietyZucchine.filter((zucchina)=> {
+  return zucchina.lunghezzaCm > 15;
+})
 
 
-for(let zucchina of varietyZucchine){
 
-  const lenghtZucchina = zucchina.lunghezzaCm;
-  const verifyLenght = ( lenghtZucchina <= 15)? smallZucchini.push(zucchina): largeZucchini.push(zucchina);
+// for(let zucchina of varietyZucchine){
 
-}
+//   const lenghtZucchina = zucchina.lunghezzaCm;
+//   const verifyLenght = ( lenghtZucchina <= 15)? smallZucchini.push(zucchina): largeZucchini.push(zucchina);
+
+// }
 
 const smallZucchiniWeight = pesaZucchine (smallZucchini);
 const bigZucchiniWeight = pesaZucchine (largeZucchini);
